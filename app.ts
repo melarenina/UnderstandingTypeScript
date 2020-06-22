@@ -1,26 +1,13 @@
-function add(n1: number, n2: number) { // : type of the return
-  return n1 + n2;
+// let userInput: any; // - With unknown, it checks the value inside it so it could be assigned to another variable. 
+                      //With any, you can just do whatever you want
+
+let userInput: unknown; 
+let userName: string;
+
+userInput = 5;
+userInput = 'Max';
+
+if (typeof userInput === 'string') {
+  userName = userInput;
 }
 
-function printResult(num: number) { // a void function
-  console.log('Result: ' + num);
-}
-
-function addAndHandle(n1: number, n2: number, cb: (num: number) => void) {
-  const result = n1 + n2;
-  cb(result);
-}
-
-printResult(add(5, 12));
-
-let combineValues: (a: number, b: number) => number; // Function type - returns a number and take 2 number arguments
-
-combineValues = add;
-
-console.log(combineValues(8, 8))
-
-addAndHandle(10, 20, (result) => { 
-  console.log(result);
-});
-
-// let someValue: undefined;
