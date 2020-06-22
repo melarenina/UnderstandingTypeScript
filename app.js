@@ -1,4 +1,5 @@
-function combine(input1, input2, resultConversion) {
+function combine(input1, input2, resultConversion // Union types combined with Literal types (it must be one of these two strings)
+) {
     var result;
     if (typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number') {
         return result = +input1 + +input2;

@@ -1,7 +1,10 @@
+type Combinable = number | string;
+type ConversionDescriptor = 'as-number' | 'as-text'; // Union types combined with Literal types (it must be one of these two strings)
+
 function combine(
-  input1: number | string,
-  input2: number | string,
-  resultConversion: 'as-number' | 'as-text' // Union types combined with Literal types (it must be one of these two strings)
+  input1: Combinable,
+  input2: Combinable,
+  resultConversion: ConversionDescriptor
 ) {
   let result;
   if (typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number') {
