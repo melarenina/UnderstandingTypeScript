@@ -1,29 +1,11 @@
-type Combinable = number | string;
-type ConversionDescriptor = 'as-number' | 'as-text'; // Union types combined with Literal types (it must be one of these two strings)
-
-function combine(
-  input1: Combinable,
-  input2: Combinable,
-  resultConversion: ConversionDescriptor
-) {
-  let result;
-  if (typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number') {
-    return result = +input1 + +input2;
-  } else {
-    return result = input1.toString() + input2.toString();
-  }
-  // if (resultConversion === 'as-number') {
-  //   return +result;
-  // } else {
-  //   return result.toString();
-  // }
+function add(n1: number, n2: number) { // : type of the return
+  return n1 + n2;
 }
 
-const combinedAges = combine(30, 26, 'as-number');
-console.log(combinedAges);
+function printResult(num: number) { // a void function
+  console.log('Result: ' + num);
+}
 
-const combinedStringAges = combine('30', '26', 'as-number');
-console.log(combinedStringAges);
+printResult(add(5, 12));
 
-const combinedNames = combine('Max', 'Anna', 'as-text');
-console.log(combinedNames);
+// let someValue: undefined;
