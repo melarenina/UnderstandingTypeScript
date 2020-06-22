@@ -11,3 +11,10 @@ if (typeof userInput === 'string') {
   userName = userInput;
 }
 
+function generateError(message: string, code: number): never {
+  // Since the error cancels, breaks our script, it never returns any value, even undefined
+  throw {message: message, errorCode: code};
+}
+
+generateError('An error ocurred!', 500);
+
